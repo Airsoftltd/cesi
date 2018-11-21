@@ -12,8 +12,17 @@ Supervisor.
 
 - [Chef Cookbook][2]
 - [Package managers][3]
-- [Docker][4] (unavailable)
+- [Docker][4] (#docker)
 - [Manuel Instructions](#manuel-instructions)
+## Docker
+Docker build 
+```
+docker build -t cesi .
+```
+```
+docker run -v /etc:/opt/cesi.conf --restart unless-stopped -p 5000:5000 --rm -it  cesi
+```
+
 
 ## Manuel Instructions
 

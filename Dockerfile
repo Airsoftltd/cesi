@@ -1,7 +1,8 @@
-FROM 3.6.7-slim
-ADD requirements.txt /opt/
-RUN pip install -r /opt/requirements.txt
+FROM python:3.6.7-slim
+ADD requirements.txt /
+RUN pip install -r /requirements.txt
 
-ADD cesi /opt/
-WORKDIR "/opt/cesi"
-CMD ["python3 /opt/cesi/run.py --config-file /opt/cesi.conf"]
+ADD cesi /app
+WORKDIR "/app"
+ENTRYPOINT ["python" ,"/app/run.py"]
+CMD ["--config-file", "/opt/cesi.conf", "--auto-reload"]
